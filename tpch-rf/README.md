@@ -10,6 +10,8 @@
 1. 基于Golang实现tpc-h rf测试工具
 2. 源码：main.go
 3. 可执行文件：bin/tpch-rf
+4. 执行rf1直接用生成的rf文件，如：lineitem.tbl.u1，执行rf2需要将rf文件重命名加上delete，如：delete-lineitem.tbl.u1
+5. 生成RF文件的命令：./dbgen -v -U 1     #生成1G数据量的RF，结果文件包含lineitem和orders
 
 Demo：
 ```
