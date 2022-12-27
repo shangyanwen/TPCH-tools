@@ -1,4 +1,3 @@
-#-----Q1
 select
         l_returnflag,
         l_linestatus,
@@ -21,7 +20,6 @@ order by
         l_returnflag,
         l_linestatus;
         
-#-----Q2
 select
         s_acctbal,
         s_name,
@@ -67,7 +65,6 @@ order by
         p_partkey
 limit 100;
 
-#------Q3
 select
         l_orderkey,
         sum(l_extendedprice * (1 - l_discount)) as revenue,
@@ -92,8 +89,6 @@ order by
         o_orderdate
 limit 10;
 
-
-#-----Q4
 select
         o_orderpriority,
         count(*) as order_count
@@ -116,7 +111,6 @@ group by
 order by
         o_orderpriority;
         
-#----Q5
 select
         n_name,
         sum(l_extendedprice * (1 - l_discount)) as revenue
@@ -142,7 +136,6 @@ group by
 order by
         revenue desc;
         
-#---Q6
 select
         sum(l_extendedprice * l_discount) as revenue
 from
@@ -153,7 +146,6 @@ where
         and l_discount between 0.06 - 0.01 and 0.06 + 0.01
         and l_quantity < 24;
         
-#----Q7
 select
         supp_nation,
         cust_nation,
@@ -194,8 +186,6 @@ order by
         cust_nation,
         l_year;
         
-        
-#------Q8
 select
         o_year,
         sum(case
@@ -234,7 +224,6 @@ group by
 order by
         o_year;
         
-#------Q9
 select
         nation,
         o_year,
@@ -268,7 +257,6 @@ order by
         nation,
         o_year desc;
         
-#------Q10
 select
         c_custkey,
         c_name,
@@ -302,7 +290,6 @@ order by
         revenue desc
 limit 20;
 
-#------Q11
 select
         ps_partkey,
         sum(ps_supplycost * ps_availqty) as value
@@ -331,7 +318,6 @@ group by
 order by
         value desc;
 
-#------Q12
 select
         l_shipmode,
         sum(case
@@ -361,7 +347,6 @@ group by
 order by
         l_shipmode;
 
-#------Q13
 select
         c_count,
         count(*) as custdist
@@ -383,8 +368,6 @@ order by
         custdist desc,
         c_count desc;
 
-#------Q14
-
 select
         100.00 * sum(case
                 when p_type like 'PROMO%'
@@ -399,7 +382,6 @@ where
         and l_shipdate >= '1996-12-01'
         and l_shipdate < date_add('1996-12-01', interval '1' month);
         
-#------Q15
 create view revenue0 (supplier_no, total_revenue) as
         select
                 l_suppkey,
@@ -435,7 +417,6 @@ order by
 
 drop view revenue0;
 
-#------Q16
 select
         p_brand,
         p_type,
@@ -467,8 +448,6 @@ order by
         p_type,
         p_size;
         
-        
-#-----q17
 select
         sum(l_extendedprice) / 7.0 as avg_yearly
 from
@@ -487,7 +466,6 @@ where
                         l_partkey = p_partkey
         );
         
-#-----q18
 select
         c_name,
         c_custkey,
@@ -522,7 +500,6 @@ order by
         o_orderdate
 limit 100;
 
-#-----q19
 select
         sum(l_extendedprice* (1 - l_discount)) as revenue
 from
@@ -559,7 +536,6 @@ where
                 and l_shipinstruct = 'DELIVER IN PERSON'
         );
 
-#-----q20
 select
         s_name,
         s_address
@@ -598,7 +574,6 @@ where
 order by
         s_name;
 
-#-----q21
 select
         s_name,
         count(*) as numwait
@@ -640,7 +615,6 @@ order by
         s_name
 limit 100;
 
-#-----q22
 select
         cntrycode,
         count(*) as numcust,
@@ -678,4 +652,3 @@ group by
         cntrycode
 order by
         cntrycode;
-
