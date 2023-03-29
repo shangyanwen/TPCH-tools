@@ -28,4 +28,5 @@ Demo：
 - -type：query/ddl/load（query-执行查询语句; ddl-DDL语句; load-导入数据）
 - -fsplit：导入数据字段分隔符，默认：'|'
 - -lsplit：导入数据行分隔符，默认：'\n'
+- -conns：10（设置最大连接数，默认：-1，没有限制）
   
